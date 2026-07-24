@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Elite Mechanical — Home comfort, engineered.</title>
+<meta name="description" content="Premium HVAC cleaning and full-system inspection for Maryland homes. Every visit measured, photographed, and delivered as a digital report. Serving the Maryland DMV.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20160%22%3E%0A%20%20%3Cdefs%3E%3ClinearGradient%20id%3D%22t%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF2246%22/%3E%3Cstop%20offset%3D%220.5%22%20stop-color%3D%22%23A34CE0%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2322D3FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%0A%20%20%3Cpath%20d%3D%22M44%20120%20L44%2078%20L80%2040%20L116%2078%20L116%20120%20Q116%20128%20108%20128%20L52%20128%20Q44%20128%2044%20120%20Z%22%20fill%3D%22none%22%20stroke%3D%22url%28%23t%29%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2240%22%20r%3D%2211%22%20fill%3D%22%23FF2246%22/%3E%0A%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%22128%22%20r%3D%2210%22%20fill%3D%22%2322D3FF%22/%3E%0A%3C/svg%3E%0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;--bg2:#EEF3FF;--ink:#080B14;--ink2:#5A6478;--line:#E4E9F5;
+    --blue:#1466FF;--blue2:#22D3FF;--red:#FF2246;--red2:#FF5C7A;
+    --disp:'Unbounded',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .neonb{color:var(--blue)} .neonr{color:var(--red)}
+  .kick{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--blue)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:700;font-size:14px;padding:14px 26px;border-radius:100px;cursor:pointer;transition:.25s;border:2px solid transparent}
+  .btn.b{background:var(--blue);color:#fff;box-shadow:0 6px 22px rgba(20,102,255,.35)}
+  .btn.b:hover{box-shadow:0 10px 34px rgba(20,102,255,.55);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;border-color:var(--red);color:var(--red)}
+  .btn.ghost:hover{background:var(--red);color:#fff;transform:translateY(-2px)}
+  .btn.dark{background:var(--ink);color:#fff}
+  section{position:relative}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 44px}
+  .sec-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 12px}
+  .sec-head p{font-size:16px;color:#3A4252;line-height:1.6}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mk{width:34px;height:34px;filter:drop-shadow(0 0 8px rgba(20,102,255,.35))}
+  .brand .wm{font-family:var(--disp);font-weight:800;font-size:16px;letter-spacing:-.01em;line-height:1}
+  .brand .wm small{display:block;font-family:var(--body);font-weight:700;font-size:6.5px;letter-spacing:.42em;color:var(--ink2);margin-top:3px}
+  .nav-links{margin-left:auto;display:flex;align-items:center;gap:28px}
+  .nav-links a{font-weight:600;font-size:14px;color:#2C3346}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .btn{padding:11px 22px}
+  @media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:150px 28px 90px;position:relative}
+  #fx{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .hero-in{position:relative;z-index:1}
+  .hero .mk{width:104px;height:104px;margin:0 auto 28px;filter:drop-shadow(0 0 26px rgba(20,102,255,.45)) drop-shadow(0 0 10px rgba(255,34,70,.22));animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .hero .kick .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red);margin:0 10px;vertical-align:middle;animation:blink 1.4s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(38px,7.6vw,80px);line-height:.99;letter-spacing:-.02em;margin:22px 0 0}
+  .hero h1 .z{color:var(--red);text-shadow:0 0 22px rgba(255,34,70,.45)}
+  .hero .sub{margin:26px auto 0;font-size:clamp(15px,1.8vw,18px);color:#3A4252;max-width:56ch;line-height:1.6}
+  .hero .cta{margin-top:38px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+
+  /* TRUST */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .trust-in{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;padding:22px 28px}
+  .trust span{font-weight:600;font-size:13.5px;color:#2C3346;display:flex;align-items:center;gap:9px}
+  .trust span::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--blue);transform:rotate(45deg);box-shadow:0 0 8px rgba(20,102,255,.5)}
+  /* COOLING LINE */
+  .coolband{background:linear-gradient(180deg,#fff,#F4F7FF);border-bottom:1px solid var(--line);padding:30px 28px 22px}
+  .coolline{display:block;width:100%;max-width:920px;margin:0 auto;height:auto}
+  .coolcap{max-width:900px;margin:6px auto 0;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+  .coolcap .hot{color:var(--red)}
+  .coolcap .cold{color:#0E9BD6}
+  .coolcap .mid{color:var(--ink2);font-weight:600;letter-spacing:.22em}
+  @media(max-width:620px){.coolcap .mid{display:none}}
+
+  /* SERVICES */
+  #services{padding:96px 0}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{border:1px solid var(--line);border-radius:22px;background:#fff;padding:34px 34px 30px;position:relative;box-shadow:0 10px 34px rgba(20,40,90,.05);transition:.3s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(20,40,90,.10)}
+  .card.feat{border-color:rgba(20,102,255,.5);box-shadow:0 0 0 1px rgba(20,102,255,.2),0 18px 50px rgba(20,102,255,.14)}
+  .card .lab{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+  .card.feat .lab{color:var(--blue)}
+  .card h3{font-family:var(--disp);font-weight:700;font-size:23px;margin:8px 0 4px;letter-spacing:-.01em}
+  .card .price{font-family:var(--disp);font-weight:800;font-size:42px;letter-spacing:-.02em;margin:10px 0 4px}
+  .card .price small{font-family:var(--body);font-size:14px;color:var(--ink2);font-weight:600}
+  .card ul{list-style:none;margin:18px 0 24px;border-top:1px solid var(--line);padding-top:18px}
+  .card li{font-size:13.5px;color:#2C3346;padding:6px 0 6px 22px;position:relative;line-height:1.45}
+  .card li::before{content:"+";position:absolute;left:0;color:var(--blue);font-family:var(--disp);font-weight:700}
+  .card .btn{width:100%;justify-content:center}
+
+  /* HOW */
+  #how{padding:96px 0;background:linear-gradient(180deg,#fff,#F4F7FF)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:0 8px 28px rgba(20,40,90,.05)}
+  .step .n{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--blue)}
+  .step .n .s{color:var(--red)}
+  .step h4{font-family:var(--disp);font-weight:700;font-size:19px;margin:12px 0 8px;letter-spacing:-.01em}
+  .step p{font-size:14px;color:#3A4252;line-height:1.55}
+
+  /* MEMBERSHIP */
+  #membership{padding:96px 0}
+  .mcards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:0 auto}
+  .mcard{border:1px solid var(--line);border-radius:22px;background:#fff;padding:32px;position:relative;box-shadow:0 10px 34px rgba(20,40,90,.05)}
+  .mcard.feat{border-color:rgba(20,102,255,.55);background:linear-gradient(180deg,#fff,#FBFCFF);box-shadow:0 0 0 1px rgba(20,102,255,.22),0 18px 50px rgba(20,102,255,.14)}
+  .mcard .badge{position:absolute;top:26px;right:26px;font-weight:700;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:20px;padding:5px 12px;box-shadow:0 0 16px rgba(20,102,255,.5)}
+  .mcard .tier{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+  .mcard h3{font-family:var(--disp);font-weight:700;font-size:24px;margin:6px 0 12px;letter-spacing:-.01em}
+  .mcard .price{font-family:var(--disp);font-weight:800;font-size:40px;letter-spacing:-.02em}
+  .mcard .price small{font-family:var(--body);font-size:14px;color:var(--ink2);font-weight:600}
+  .mcard .mo{font-weight:600;font-size:12.5px;color:var(--red);margin-top:6px}
+  .mcard ul{list-style:none;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+  .mcard li{font-size:13.5px;color:#2C3346;padding:6px 0 6px 22px;position:relative;line-height:1.45}
+  .mcard li::before{content:"+";position:absolute;left:0;color:var(--blue);font-family:var(--disp);font-weight:700}
+
+  /* BOOK */
+  #book{padding:96px 0;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  #book::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(20,102,255,.25),transparent 62%);pointer-events:none}
+  #book .sec-head h2{color:#fff}
+  #book .sec-head p{color:#AEB8C6}
+  #book .kick{color:var(--blue2)}
+  .book-grid{position:relative;z-index:1;display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
+  .svc-pick{display:flex;flex-direction:column;gap:14px}
+  .svc-opt{text-align:left;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:18px;padding:20px 22px;cursor:pointer;transition:.2s;color:#fff}
+  .svc-opt:hover{border-color:rgba(20,102,255,.6)}
+  .svc-opt.active{border-color:var(--blue);background:rgba(20,102,255,.12);box-shadow:0 0 0 1px var(--blue),0 0 30px rgba(20,102,255,.25)}
+  .svc-opt .r{display:flex;justify-content:space-between;align-items:baseline}
+  .svc-opt h4{font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:-.01em}
+  .svc-opt .p{font-family:var(--disp);font-weight:800;font-size:22px}
+  .svc-opt p{font-size:12px;color:#AEB8C6;margin-top:8px;line-height:1.5}
+  .sched{min-height:440px;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:#fff;overflow:hidden;position:relative}
+  .sched-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;color:var(--ink)}
+  .sched-ph .cal-ico{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue2));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--disp);font-weight:800;font-size:24px;box-shadow:0 8px 26px rgba(20,102,255,.4);margin-bottom:18px}
+  .sched-ph h4{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:8px}
+  .sched-ph p{font-size:13.5px;color:var(--ink2);max-width:38ch;line-height:1.6;margin-bottom:18px}
+  .sched-ph .note{font-size:11px;color:#9AA6B5;margin-top:16px}
+  #cal-embed{width:100%;height:640px}
+  .book-alt{position:relative;z-index:1;text-align:center;margin-top:26px;color:#AEB8C6;font-size:14px}
+  .book-alt a{color:var(--blue2);font-weight:600}
+  @media(max-width:820px){.book-grid{grid-template-columns:1fr}.cards,.mcards,.steps{grid-template-columns:1fr}}
+
+  /* NUMBERS */
+  #numbers{padding:96px 0;background:linear-gradient(180deg,#F4F7FF,#fff)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:6px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;box-shadow:0 10px 34px rgba(20,40,90,.05);transition:.3s}
+  .stat:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(20,40,90,.10)}
+  .stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(38px,5vw,58px);letter-spacing:-.03em;line-height:1;background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .num span{color:var(--red);-webkit-text-fill-color:var(--red)}
+  .stat p{margin-top:16px;font-size:13.5px;color:#3A4252;line-height:1.55}
+  .stat p b{color:var(--ink);font-weight:700}
+  .stat-note{margin-top:28px;text-align:center;font-size:12.5px;color:var(--ink2);max-width:80ch;margin:28px auto 0;line-height:1.65}
+  .stat-note b{color:var(--ink)}
+  @media(max-width:820px){.stat-grid{grid-template-columns:1fr 1fr}}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#AEB8C6;padding:56px 0 40px}
+  .foot-in{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+  .foot .wm{font-family:var(--disp);font-weight:800;font-size:20px;color:#fff;letter-spacing:-.01em}
+  .foot .wm .b{color:var(--blue2)}
+  .foot .tag{font-family:var(--disp);font-weight:600;color:var(--blue2);margin-top:8px;font-size:14px}
+  .foot-links{display:flex;gap:40px;flex-wrap:wrap}
+  .foot-col b{color:#fff;font-size:12px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:12px}
+  .foot-col a{display:block;font-size:14px;margin-bottom:9px}
+  .foot-col a:hover{color:var(--blue2)}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs (refrigerant gradient + glow) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="temp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF2246"/><stop offset="0.5" stop-color="#A34CE0"/><stop offset="1" stop-color="#22D3FF"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs></svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand">
+      <svg class="mk" viewBox="0 0 160 160" fill="none">
+        <path d="M44 120 L44 78 L80 40 L116 78 L116 120 Q116 128 108 128 L52 128 Q44 128 44 120 Z" stroke="url(#temp)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="80" cy="40" r="9" fill="#FF2246"/><circle cx="80" cy="128" r="8" fill="#22D3FF"/></svg>
+      <div class="wm">APEX <span class="neonb">ELITE</span><small>MECHANICAL</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#membership">Membership</a>
+      <a href="#numbers">The numbers</a>
+      <a href="#book" class="btn b">Book a visit</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="fx"></canvas>
+  <div class="hero-in">
+    <svg class="mk" viewBox="0 0 160 160" fill="none">
+      <path id="heroLoop" d="M44 120 L44 78 L80 40 L116 78 L116 120 Q116 128 108 128 L52 128 Q44 128 44 120 Z" stroke="url(#temp)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <circle cx="80" cy="40" r="9" fill="#FF2246" filter="url(#glow)"/><circle cx="80" cy="40" r="3.4" fill="#fff"/>
+      <circle cx="80" cy="128" r="8" fill="#22D3FF" filter="url(#glow)"/><circle cx="80" cy="128" r="3" fill="#fff"/>
+      <g filter="url(#glow)"><circle r="5" fill="#fff"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#heroLoop"/></animateMotion><animate attributeName="fill" dur="4s" repeatCount="indefinite" values="#22D3FF;#7E7BE8;#FF3B57;#A34CE0;#22D3FF"/></circle></g></svg>
+    <div class="kick">Precision HVAC <span class="dot"></span> Maryland</div>
+    <h1>Home comfort,<br><span class="z">engineered.</span></h1>
+    <p class="sub">Detailed cleaning and full-system inspection for Maryland homes — every visit measured, photographed, and delivered as a digital condition report to your inbox the same day. Flat price, quoted before we start.</p>
+    <div class="cta">
+      <a href="#book" class="btn b">Book a visit →</a>
+      <a href="#services" class="btn ghost">See the plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- COOLING LINE -->
+<div class="coolband">
+  <svg class="coolline" viewBox="0 0 920 60" fill="none">
+    <path id="coolLine" d="M30 30 L300 30 L300 46 L620 46 L620 30 L890 30" stroke="url(#temp)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <circle cx="30" cy="30" r="8" fill="#FF2246" filter="url(#glow)"/><circle cx="30" cy="30" r="3.2" fill="#fff"/>
+    <circle cx="890" cy="30" r="8" fill="#22D3FF" filter="url(#glow)"/><circle cx="890" cy="30" r="3.2" fill="#fff"/>
+    <circle cx="300" cy="46" r="3" fill="#A34CE0"/><circle cx="620" cy="46" r="3" fill="#7E7BE8"/>
+    <g filter="url(#glow)">
+      <circle r="4" fill="#fff"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#coolLine"/></animateMotion><animate attributeName="fill" dur="3.4s" repeatCount="indefinite" values="#FF3B57;#A34CE0;#22D3FF;#22D3FF"/></circle>
+      <circle r="4" fill="#fff"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.13s"><mpath href="#coolLine"/></animateMotion><animate attributeName="fill" dur="3.4s" repeatCount="indefinite" begin="1.13s" values="#FF3B57;#A34CE0;#22D3FF;#22D3FF"/></circle>
+      <circle r="4" fill="#fff"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.26s"><mpath href="#coolLine"/></animateMotion><animate attributeName="fill" dur="3.4s" repeatCount="indefinite" begin="2.26s" values="#FF3B57;#A34CE0;#22D3FF;#22D3FF"/></circle>
+    </g>
+  </svg>
+  <div class="coolcap"><span class="hot">◀ Condenser</span><span class="mid">Refrigerant flow, engineered</span><span class="cold">Evaporator ▶</span></div>
+</div>
+
+<!-- TRUST -->
+<div class="trust"><div class="trust-in">
+  <span>Photo-documented every visit</span>
+  <span>Flat-rate pricing</span>
+  <span>Locally owned</span>
+  <span>Serving the Maryland DMV</span>
+</div></div>
+
+<!-- SERVICES -->
+<section id="services"><div class="wrap">
+  <div class="sec-head"><div class="kick">The Menu</div><h2>Flat rate. Documented. <span class="neonr">No surprises.</span></h2><p>One thorough visit, one price quoted before we start, and a digital condition report with before-and-after photos the same day.</p></div>
+  <div class="cards">
+    <div class="card">
+      <div class="lab">Core visit</div>
+      <h3>Signature Clean &amp; Inspect</h3>
+      <div class="price">$250<small> / system</small></div>
+      <ul>
+        <li>Condenser &amp; evaporator coil cleaning</li>
+        <li>Drain line + condensate pan &amp; pump cleaning</li>
+        <li>Thermostat, capacitor &amp; contactor inspection</li>
+        <li>Temperature-split (ΔT) reading + airflow check</li>
+        <li>Photo-documented digital condition report</li>
+      </ul>
+      <a href="#book" class="btn dark" data-svc="signature">Book Signature →</a>
+    </div>
+    <div class="card feat">
+      <div class="lab">Deep service</div>
+      <h3>Premium Deep Clean</h3>
+      <div class="price">$475<small> / system</small></div>
+      <ul>
+        <li>Everything in Signature Clean &amp; Inspect</li>
+        <li>Full blower-wheel removal &amp; deep clean</li>
+        <li>Blower housing &amp; compartment cleaning</li>
+        <li>Deep accessible evaporator cleaning</li>
+        <li>Expanded photo documentation</li>
+      </ul>
+      <a href="#book" class="btn b" data-svc="premium">Book Premium →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOW -->
+<section id="how"><div class="wrap">
+  <div class="sec-head"><div class="kick">How it works</div><h2>Three steps. <span class="neonb">Zero guesswork.</span></h2></div>
+  <div class="steps">
+    <div class="step"><div class="n">0<span class="s">1</span></div><h4>You book</h4><p>Pick a time online in two minutes. Your flat rate is shown up front — no estimates, no meter.</p></div>
+    <div class="step"><div class="n">0<span class="s">2</span></div><h4>We document</h4><p>Shoe covers on, floor runners down. We clean and photograph every component, before and after.</p></div>
+    <div class="step"><div class="n">0<span class="s">3</span></div><h4>You get the report</h4><p>A clean digital condition report with photos and readings lands in your inbox the same day.</p></div>
+  </div>
+</div></section>
+
+<!-- MEMBERSHIP -->
+<section id="membership"><div class="wrap">
+  <div class="sec-head"><div class="kick">Membership</div><h2>Comfort on a <span class="neonr">subscription.</span></h2><p>Priority when the weather turns, a living digital record of your equipment, and documented care on schedule.</p></div>
+  <div class="mcards">
+    <div class="mcard">
+      <div class="tier">Tier I</div>
+      <h3>Apex Care</h3>
+      <div class="price">$449<small> / yr</small></div>
+      <div class="mo">or $42 / month</div>
+      <ul>
+        <li>Two Signature Clean &amp; Inspect visits / year</li>
+        <li>Priority scheduling</li>
+        <li>Filter reminders at member pricing</li>
+        <li>Living digital equipment record</li>
+        <li>10% off additional services</li>
+      </ul>
+    </div>
+    <div class="mcard feat">
+      <div class="badge">Most Popular</div>
+      <div class="tier">Tier II</div>
+      <h3>Apex Signature</h3>
+      <div class="price">$749<small> / yr</small></div>
+      <div class="mo">or $69 / month</div>
+      <ul>
+        <li>One Premium Deep Clean + one Signature visit</li>
+        <li>Everything in Apex Care</li>
+        <li>15% off additional services</li>
+        <li>Annual digital system condition report</li>
+        <li>First in line during heat waves &amp; cold snaps</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- BOOK -->
+<section id="book"><div class="wrap">
+  <div class="sec-head"><div class="kick">Book your visit</div><h2>Pick a time that works.</h2><p>Choose your service and grab an open slot. You'll get an instant confirmation, and we'll text you when your technician is en route.</p></div>
+  <div class="book-grid">
+    <div class="svc-pick">
+      <button class="svc-opt active" data-svc="signature">
+        <div class="r"><h4>Signature Clean &amp; Inspect</h4><span class="p">$250</span></div>
+        <p>Full clean, inspection, and a photo-documented report. ≈ 60–90 min.</p>
+      </button>
+      <button class="svc-opt" data-svc="premium">
+        <div class="r"><h4>Premium Deep Clean</h4><span class="p">$475</span></div>
+        <p>Everything in Signature plus full blower-wheel deep clean. ≈ 2–3 hrs.</p>
+      </button>
+      <div style="font-size:12px;color:#8794A6;line-height:1.5;padding:4px 4px 0">Prices are flat and per system. Additional systems quoted at booking. Cleaning &amp; inspection services only.</div>
+    </div>
+    <div class="sched" id="sched">
+      <div class="sched-ph" id="schedPh">
+        <div class="cal-ico">A</div>
+        <h4>Live scheduling — going live shortly</h4>
+        <p>The self-scheduling calendar connects here. Choose Signature or Premium on the left, pick an open time, and you're booked with an instant confirmation.</p>
+        <a href="mailto:jacobmclennan43@gmail.com?subject=Booking%20request%20—%20Apex%20Elite%20Mechanical" class="btn b">Request a time by email</a>
+        <div class="note">Prefer to talk first? Call or text <a href="tel:+12025030539" style="color:var(--blue);font-weight:700">(202) 503-0539</a></div>
+      </div>
+      <div id="cal-embed" style="display:none"></div>
+    </div>
+  </div>
+  <div class="book-alt">Questions before you book? Email <a href="mailto:jacobmclennan43@gmail.com">jacobmclennan43@gmail.com</a></div>
+</div></section>
+
+<!-- NUMBERS -->
+<section id="numbers"><div class="wrap">
+  <div class="sec-head"><div class="kick">The numbers</div><h2>Maintenance is the cheapest <span class="neonb">efficiency</span> you can buy.</h2><p>Nearly half of your energy bill rides on how cleanly your system runs. Neglect taxes it quietly, every month — a clean, documented system gives back the comfort you're already paying for.</p></div>
+  <div class="stat-grid">
+    <div class="stat"><div class="num">~50<span>%</span></div><p>of the average home's energy bill goes to <b>heating &amp; cooling</b> — so how efficiently your system runs is real money.</p></div>
+    <div class="stat"><div class="num">5–15<span>%</span></div><p>more energy your AC draws with a <b>clogged filter</b> alone — one of the first things we check and document.</p></div>
+    <div class="stat"><div class="num">20–30<span>%</span></div><p>of conditioned air is typically <b>lost to duct leaks</b> and airflow problems a real inspection surfaces.</p></div>
+    <div class="stat"><div class="num">$1,900</div><p>average annual home energy bill — <b>nearly half of it</b> depends on equipment most people never have cleaned.</p></div>
+  </div>
+  <div class="stat-note">Figures: <b>U.S. Department of Energy</b> &amp; <b>ENERGY STAR</b>. Every Apex Elite visit targets exactly what these numbers point to — clean coils, correct airflow, a fresh filter, and a documented temperature-split reading — so your system delivers comfort instead of quietly wasting it.</div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="foot-in">
+    <div>
+      <div class="wm">APEX <span class="b">ELITE</span> MECHANICAL</div>
+      <div class="tag">Home comfort, engineered.</div>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col"><b>Services</b>
+        <a href="#services">Signature Clean &amp; Inspect</a>
+        <a href="#services">Premium Deep Clean</a>
+        <a href="#membership">Membership</a>
+      </div>
+      <div class="foot-col"><b>Company</b>
+        <a href="#how">How it works</a>
+        <a href="#numbers">The numbers</a>
+        <a href="#book">Book a visit</a>
+      </div>
+      <div class="foot-col"><b>Contact</b>
+        <a href="mailto:jacobmclennan43@gmail.com">Email us</a>
+        <a href="tel:+12025030539">Call or text (202) 503-0539</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Apex Elite Mechanical LLC · Serving the Maryland DMV</span>
+    <span>Cleaning &amp; inspection services.</span>
+  </div>
+</div></footer>
+
+<script>
+/* ---- electric pulse background ---- */
+(function(){
+  const c=document.getElementById('fx'); if(!c) return; const x=c.getContext('2d');
+  let W,H,DPR=Math.min(window.devicePixelRatio||1,2);
+  function size(){const r=c.getBoundingClientRect();W=c.width=r.width*DPR;H=c.height=r.height*DPR;}
+  size(); addEventListener('resize',size);
+  const BLUE='20,102,255',RED='255,34,70';
+  const pulses=[];
+  function sp(){const horiz=Math.random()<0.7;const ang=horiz?(Math.random()<0.5?0:Math.PI)+(Math.random()-0.5)*0.5:(Math.random()<0.5?Math.PI/2:-Math.PI/2)+(Math.random()-0.5)*0.5;pulses.push({x:Math.random()*W,y:Math.random()*H,ang,sp:(2.4+Math.random()*3)*DPR,len:(90+Math.random()*150)*DPR,col:Math.random()<0.62?BLUE:RED});}
+  for(let i=0;i<6;i++) sp();
+  const nodes=[];for(let i=0;i<20;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,r:(1+Math.random()*1.6)*DPR,ph:Math.random()*6.28,col:Math.random()<0.6?BLUE:RED});
+  let t=0;
+  function frame(){
+    x.clearRect(0,0,W,H);
+    for(const n of nodes){const a=0.16+0.16*Math.sin(t*0.05+n.ph);x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fillStyle='rgba('+n.col+','+a+')';x.shadowBlur=12*DPR;x.shadowColor='rgba('+n.col+',0.6)';x.fill();}
+    x.shadowBlur=0;
+    for(let i=pulses.length-1;i>=0;i--){const p=pulses[i];p.x+=Math.cos(p.ang)*p.sp;p.y+=Math.sin(p.ang)*p.sp;const tx=p.x-Math.cos(p.ang)*p.len,ty=p.y-Math.sin(p.ang)*p.len;const g=x.createLinearGradient(tx,ty,p.x,p.y);g.addColorStop(0,'rgba('+p.col+',0)');g.addColorStop(1,'rgba('+p.col+',0.85)');x.strokeStyle=g;x.lineWidth=2.2*DPR;x.lineCap='round';x.shadowBlur=16*DPR;x.shadowColor='rgba('+p.col+',0.7)';x.beginPath();x.moveTo(tx,ty);x.lineTo(p.x,p.y);x.stroke();x.beginPath();x.arc(p.x,p.y,2.4*DPR,0,7);x.fillStyle='rgba('+p.col+',1)';x.fill();if(p.x<-p.len||p.x>W+p.len||p.y<-p.len||p.y>H+p.len){pulses.splice(i,1);sp();}}
+    x.shadowBlur=0;t++;requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* ---- booking: service select + Cal.com wiring ----
+   TO GO LIVE: set CAL below to your Cal.com links, e.g.
+   const CAL = { signature: "apex-elite/signature-clean", premium: "apex-elite/premium-deep-clean" };
+   Leave as null to show the placeholder. ---- */
+const CAL = { signature: "apex-elite/clean-inspect", premium: "apex-elite/premium-deep-clean" };
+let currentSvc='signature';
+const opts=document.querySelectorAll('.svc-opt');
+const ph=document.getElementById('schedPh');
+const embed=document.getElementById('cal-embed');
+
+function loadCal(svc){
+  if(!CAL || !CAL[svc]) return; // stay on placeholder until links added
+  ph.style.display='none'; embed.style.display='block'; embed.innerHTML='';
+  (function (C, A, L) { let p = function (a, ar) { p.q.push([a, ar]); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p.apply(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(namespace, ar) : p(ar); return; } p(ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", {origin:"https://cal.com"});
+  Cal("inline", { elementOrSelector:"#cal-embed", calLink: CAL[svc], layout:"month_view" });
+}
+opts.forEach(o=>o.addEventListener('click',()=>{
+  opts.forEach(x=>x.classList.remove('active')); o.classList.add('active');
+  currentSvc=o.dataset.svc; loadCal(currentSvc);
+}));
+// deep-link from service cards ("Book Signature/Premium")
+document.querySelectorAll('[data-svc]').forEach(el=>{
+  if(el.classList.contains('svc-opt')) return;
+  el.addEventListener('click',()=>{
+    const svc=el.dataset.svc; const opt=document.querySelector('.svc-opt[data-svc="'+svc+'"]');
+    if(opt){opts.forEach(x=>x.classList.remove('active'));opt.classList.add('active');currentSvc=svc;loadCal(svc);}
+  });
+});
+loadCal(currentSvc);
+</script>
+</body>
+</html>
