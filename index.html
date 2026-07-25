@@ -130,8 +130,7 @@
   @media(max-width:900px){
     .hero{padding:110px 0 54px}
     .hero-grid{grid-template-columns:1fr;gap:34px}
-    .hero-copy .cta .btn.r{width:100%}
-    #fx{display:none}
+    .hero-copy .cta .btn.b{width:100%}
   }
 
   /* TRUST BAR */
@@ -164,9 +163,9 @@
   .card li{font-size:13.5px;color:#2C3346;padding:6px 0 6px 22px;position:relative;line-height:1.45}
   .card li::before{content:"+";position:absolute;left:0;color:var(--blue);font-family:var(--disp);font-weight:700}
   .card .pernote{font-size:12px;color:var(--ink2);line-height:1.5;margin-bottom:16px}
-  .card .cphoto{position:relative;border-radius:14px;overflow:hidden;height:160px;margin:16px 0 2px}
-  .card .cphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .card .cphoto em{position:absolute;left:8px;bottom:8px;font-style:normal;font-weight:700;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(8,11,20,.55);border-radius:6px;padding:3px 8px}
+  .cphoto{position:relative;border-radius:14px;overflow:hidden;height:160px;margin:16px 0 2px}
+  .cphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cphoto em{position:absolute;left:8px;bottom:8px;font-style:normal;font-weight:700;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(8,11,20,.55);border-radius:6px;padding:3px 8px}
   .card .btn{width:100%;margin-top:auto}
   .scope{margin-top:26px;border:1px solid var(--line);background:#F8FAFF;border-radius:18px;padding:24px 26px}
   .scope h4{font-family:var(--disp);font-weight:700;font-size:15px;margin-bottom:10px}
@@ -503,6 +502,7 @@
     </div>
     <div class="pcard real">
       <span class="ph-tag">Case study</span>
+      <div class="cphoto" style="height:120px;margin:4px 0 6px"><img src="coil-exposed.jpg" alt="Condenser with panels removed, coil fully exposed mid-service" loading="lazy"><em>Panels off — coil exposed</em></div>
       <p class="pquote"><b>The call:</b> A/C grinding and barely cooling during a heat wave. Diagnosed from a homeowner's video within minutes — a blower that hadn't been cleaned in years.<br><br><b>The visit:</b> Full blower removal and deep clean, reassembly, and an outdoor condenser inspection that caught heavy coil buildup.<br><br><b>The result:</b> Cooling restored the same day, with photos documenting every step.</p>
     </div>
   </div>
@@ -692,16 +692,17 @@ document.addEventListener('click',function(e){
 /* ---- electric pulse background (desktop, motion-safe only) ---- */
 (function(){
   const c=document.getElementById('fx'); if(!c) return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches || innerWidth<900){ c.remove(); return; }
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ c.remove(); return; }
+  const SMALL=innerWidth<900;
   const x=c.getContext('2d');
-  let W,H,DPR=Math.min(window.devicePixelRatio||1,2);
+  let W,H,DPR=Math.min(window.devicePixelRatio||1,SMALL?1.5:2);
   function size(){const r=c.getBoundingClientRect();W=c.width=r.width*DPR;H=c.height=r.height*DPR;}
   size(); addEventListener('resize',size);
   const BLUE='20,102,255',RED='255,34,70';
   const pulses=[];
   function sp(){const horiz=Math.random()<0.7;const ang=horiz?(Math.random()<0.5?0:Math.PI)+(Math.random()-0.5)*0.5:(Math.random()<0.5?Math.PI/2:-Math.PI/2)+(Math.random()-0.5)*0.5;pulses.push({x:Math.random()*W,y:Math.random()*H,ang,sp:(2.4+Math.random()*3)*DPR,len:(90+Math.random()*150)*DPR,col:Math.random()<0.62?BLUE:RED});}
-  for(let i=0;i<5;i++) sp();
-  const nodes=[];for(let i=0;i<16;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,r:(1+Math.random()*1.6)*DPR,ph:Math.random()*6.28,col:Math.random()<0.6?BLUE:RED});
+  for(let i=0;i<(SMALL?3:5);i++) sp();
+  const nodes=[];for(let i=0;i<(SMALL?8:16);i++)nodes.push({x:Math.random()*W,y:Math.random()*H,r:(1+Math.random()*1.6)*DPR,ph:Math.random()*6.28,col:Math.random()<0.6?BLUE:RED});
   let t=0;
   function frame(){
     x.clearRect(0,0,W,H);
